@@ -5,7 +5,7 @@ if not defined filelist (
 	set filelist=
 	echo off
 	cls
-	title Generating AVS script from video - Error
+	title Convert and trim to MP4 - Error
 	echo File not found...
 	echo Please Drag ^& Drop video file onto this .cmd script
 	echo ...................................................
@@ -16,6 +16,7 @@ set filelist=
 
 echo off
 cls
+title Convert and trim to MP4
 
 SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 for %%V in (%*) do (
