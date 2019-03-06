@@ -8,19 +8,18 @@ title Merging Audio and Video 4 YouTube
 echo  ▄ ▄                                ▄ ▄
 echo  █▀█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀█
 echo  █▀█  ▄ ▄          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄   █▀█ ...by J.M.F.
-echo  █▀█  █▄█        ░█▄ ▄████ ███████  █▀█ ═════════════════════════════════════
-echo  █▀█   █░ █▀█ █░█░██░█░█░█░▄░█░■░█  █▀█ Hello, this software will merge audio
-echo  █▀█   █░ █▄█ █▄█░██░█░▀░█░▀░█░▀▀█  █▀█ and video in M4A and MP4 format,
-echo  █▀█               ▀▀▀▀▀▀▀▀▀▀▀▀▀▀   █▀█ to one file.  Good luck!
-echo  █▀█                                █▀█ ═════════════════════════════════════
+echo  █▀█  █▄█        ░█▄ ▄████ ███████  █▀█ ══════════════════════════════════════
+echo  █▀█   █░ █▀█ █░█░██░█░█░█░▄░█░■░█  █▀█ Hello, this scipt will merge audio and
+echo  █▀█   █░ █▄█ █▄█░██░█░▀░█░▀░█░▀▀█  █▀█ video in M4A / WebM and MP4 format,
+echo  █▀█               ▀▀▀▀▀▀▀▀▀▀▀▀▀▀   █▀█ into one file.  Good luck!
+echo  █▀█                                █▀█ ══════════════════════════════════════
 echo  █▀█    Merging Audio with Video    █▀█
 echo  █▀█          from YouTube          █▀█
-echo  █▀█                                █▀█ Please provide file names...
+echo  █▀█                                █▀█
 echo  █▀█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀█
 echo.
-echo #Tip
-echo To paste, use right-mouse button.
-echo ---------------------------------
+echo #TIP  To paste, use right-mouse button.
+echo ---------------------------------------
 :provide
 set /p Video=Provide Video file: 
 echo.
