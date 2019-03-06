@@ -65,7 +65,7 @@ if errorlevel 1 (
 )
 echo Files were successfully merged to:
 echo "%Output%.mkv"
-REM Deletinh source files
+REM Deleting source files
 choice /c yn /m "Do you want to delete source files? "
 if errorlevel 2 (
 	pause
