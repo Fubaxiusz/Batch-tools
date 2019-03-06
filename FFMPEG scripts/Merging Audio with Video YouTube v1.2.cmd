@@ -4,7 +4,7 @@ echo off
 mode con: cols=80 lines=25
 color 0b
 cls
-title Merging Audio and Video 4 YouTube
+title Merging Audio and Video from YouTube
 echo  ▄ ▄                                ▄ ▄
 echo  █▀█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀█
 echo  █▀█  ▄ ▄          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄   █▀█ ...by J.M.F.
