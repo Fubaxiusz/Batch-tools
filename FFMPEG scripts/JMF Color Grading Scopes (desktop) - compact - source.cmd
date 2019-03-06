@@ -1,5 +1,7 @@
-REM This script uses FFPLAY to display vectorscope with waveform parade and luma of a main monitor or a custom desktop region.
-REM (c) 2018 Jacob Maximilian Fober
+REM This script uses FFPLAY to display vectorscope
+REM with waveform parade and luma of a main monitor
+REM or a custom desktop region.
+REM Copyright (c) 2018 Jacob Maximilian Fober
 REM This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 REM (CC BY-SA 4.0) https://creativecommons.org/licenses/by-sa/4.0/
 echo off
