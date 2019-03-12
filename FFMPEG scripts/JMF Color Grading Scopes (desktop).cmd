@@ -18,9 +18,10 @@ set offset_x=0
 set offset_y=0
 set show_region=0
 call :logo
-echo To manually set up capture region,
-echo please close the scope window.
-echo.
+echo  ╔══════════════════════════════════╗
+echo  ║To manually set up capture region,║
+echo  ║ please close the scope window.   ║
+echo  ╚══════════════════════════════════╝
 echo.
 call :instruction
 :scope
@@ -116,10 +117,10 @@ echo     ▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀  ▀█▀   
 echo.
 goto :eof
 :instruction
-echo Key bindings:
-echo.
-echo  "q",ESC ...... Quit
-echo  "f" .......... Toggle full screen
-echo  "p",SPC ...... Pause
-echo.
+echo  Key bindings:
+echo  ┌────────┬────────────────────┐
+echo  │"Q",ESC │ Quit              │
+echo  │"F"     │ Toggle full-screen│
+echo  │"P",SPC │ Pause             │
+echo  └────────┴────────────────────┘
 echo.
