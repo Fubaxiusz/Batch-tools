@@ -1,7 +1,9 @@
 REM This script plays radio streams thru FFplay execudable
+REM ...by JMF
 chcp 65001
 echo off
 cls
+REM Default audio device for FFplay
 set SDL_AUDIODRIVER=directsound
 title FFplay Radio
 color 0a
@@ -42,25 +44,29 @@ set radio=http://74.50.122.103:9748/
 %nextStation%
 :8
 echo #8 Electronic Trance Psytrance Progressive
-set radio=http://hestia2.cdnstream.com/1453_64
+set radio=http://hestia2.cdnstream.com/1453_128
 %nextStation%
 :9
 echo #9 Electronic Psychedelic Goa Trance
 set radio=http://hestia2.cdnstream.com/1458_128
 %nextStation%
 :10
-echo #10 Classical Music
-set radio=http://icecast6.play.cz/croddur-256.mp3
+echo #10(A) Electronic Psytrance Zenonseque
+set radio=http://hestia2.cdnstream.com/1450_128
 %nextStation%
 :11
-echo #11 Epic Cinematic
+echo #11(B) Classical Music
+set radio=http://icecast6.play.cz/croddur-256.mp3
+%nextStation%
+:12
+echo #12(C) Epic Cinematic
 set radio=http://streaming.radionomy.com/Unleashingepicsoundtracks
 %nextStation%
 REM end of radio stations
 set radio=
 echo.
-echo To stop listening, press "q"
-choice /c 123456789AB /m "Select your radio station..."
+echo To stop listening, press "q" or Esc
+choice /c 123456789ABC /m "Select your radio station..."
 set choice=%errorlevel%
 title FFplay Radio  #%choice%
 set loopmark=true
