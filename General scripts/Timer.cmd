@@ -46,8 +46,8 @@ echo  ╚═══════════════════════�
 REM Saving to log file
 echo %date%>> timelog.txt
 echo  ╔═══════════════════════╦═══════════╗  Total time:>> timelog.txt
-echo  ║Time of initialization ║%starttime%║   hours .............. %hour%>> timelog.txt
-echo  ╟───────────────────────╫───────────╢   minutes ............ %min%>> timelog.txt
+echo  ║Time of initialization ║%starttime%║   hours .............. %hour% >> timelog.txt
+echo  ╟───────────────────────╫───────────╢   minutes ............ %min% >> timelog.txt
 echo  ║   Time of execution   ║%endtime%║   seconds ............ %sec% %cents%/100>> timelog.txt
 echo  ╚═══════════════════════╩═══════════╝>> timelog.txt
 echo.>> timelog.txt
