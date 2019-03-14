@@ -39,13 +39,19 @@ for %%t in (*.wav) do (
 REM Starting FFMPEG module
 	ffmpeg -i "%%t" "%%~nt.flac"
 REM Checking error status of FFMPEG
-	if %errorlevel%==9009 (
+	if errorlevel 9009 (
 		echo.
 		echo  ╔═════╗
-		echo  ║ERROR║ No FFMPEG
+		echo  ║ERROR║ Missing FFMPEG.exe software.
 		echo  ╚═════╝
-		echo Press any button to exit...
+		echo Please check your user Environment Variables in system settings.
+		echo.
+		echo You can download FFMPEG packages at:
+		echo https://ffmpeg.org
+		echo.
+		echo ...press any key to visit download website
 		pause
+		start http://ffmpeg.zeranoe.com/builds/
 		goto eof
 	)
 	if errorlevel 1 (

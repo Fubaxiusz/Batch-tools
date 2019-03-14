@@ -286,10 +286,16 @@ if %errorlevel%==9009 (
 	title Error - MP4 film 4 YouTube
 	echo.
 	echo  ╔═════╗
-	echo  ║ERROR║ No FFMPEG
+	echo  ║ERROR║ Missing FFMPEG.exe software
 	echo  ╚═════╝
-	echo Press any button to go back...
+	echo Please check your user Environment Variables in system settings.
+	echo.
+	echo You can download FFMPEG packages at:
+	echo https://ffmpeg.org
+	echo.
+	echo ...press any key to visit download website and return to rendering
 	pause
+	start http://ffmpeg.zeranoe.com/builds/
 	echo.
 	goto rendering
 )

@@ -1,14 +1,29 @@
 chcp 65001
 set filelist=%*
 
+ffmpeg
+if errorlevel 9009 (
+	title=Converting video to ProRes MKV - Error
+	echo.
+	echo Missing FFMPEG.exe software.
+	echo Please check your user Environment Variables in system settings.
+	echo.
+	echo You can download FFMPEG packages at:
+	echo https://ffmpeg.org
+	echo.
+	echo ...press any key to visit download website
+	pause
+	start http://ffmpeg.zeranoe.com/builds/
+)
+
 if not defined filelist (
 	set filelist=
 	echo off
 	cls
-	title Generating AVS script from video - Error
+	title Converting video to ProRes MKV - Error
 	echo File not found...
 	echo Please Drag ^& Drop video file onto this .cmd script
-	echo ...................................................
+	echo ───────────────────────────────────────────────────
 	pause
 	goto eof
 )

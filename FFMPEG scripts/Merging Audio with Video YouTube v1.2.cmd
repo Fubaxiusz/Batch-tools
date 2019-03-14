@@ -1,4 +1,4 @@
-﻿REM This script merges M4A file with MP4
+REM This script merges M4A file with MP4
 chcp 65001
 echo off
 mode con: cols=80 lines=25
@@ -42,13 +42,17 @@ REM Beginning merging
 ffmpeg -i %Video% -i %Audio% -c copy -map 0:v -map 1:a "%Output%.mkv"
 if %errorlevel%==9009 (
 	echo.
+	ffmpeg
+	echo.
 	echo  ╔═════╗
-	echo  ║ERROR║ Missing FFMPEG
+	echo  ║ERROR║ Missing FFMPEG.exe software
 	echo  ╚═════╝
+	echo Please check your user Environment Variables in system settings.
 	echo.
-	echo Press any key and return to merging...
-	pause
+	echo You can download FFMPEG packages at:
+	echo https://ffmpeg.org
 	echo.
+	echo ...press any key to visit download website or return to merging
 	goto merging
 )
 echo ═══════════════════════════════════════════════════════════════════════════════

@@ -9,11 +9,15 @@ REM actual program
 if not defined ffplay (
 	ffplay -f vfwcap -i 0
 ) else (
-	echo [ERROR]
-	echo FFplay from FFmpeg not found,
-	echo plese install FFmpeg and
-	echo add FFplay.exe directrory to your local viariables.
 	echo.
+	echo Missing FFplay.exe software.
+	echo Please check your user Environment Variables in system settings.
+	echo.
+	echo You can download FFplay packages at:
+	echo https://ffmpeg.org
+	echo.
+	echo ...press any key to visit download website
 	pause
+	start http://ffmpeg.zeranoe.com/builds/
 )
 goto eof
