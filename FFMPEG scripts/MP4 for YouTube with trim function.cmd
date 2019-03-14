@@ -8,7 +8,7 @@ if not defined filelist (
 	title Convert and trim to MP4 - Error
 	echo File not found...
 	echo Please Drag ^& Drop video file onto this .cmd script
-	echo ...................................................
+	echo ───────────────────────────────────────────────────
 	pause
 	goto eof
 )

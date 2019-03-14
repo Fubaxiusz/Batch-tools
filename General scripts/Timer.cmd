@@ -7,7 +7,7 @@ echo Press any key to START measuring time.
 pause
 call :tstart
 echo.
-echo Now press any key to STOP and desplay result.
+echo Now press any key to STOP and display result.
 pause
 call :tstop
 echo.

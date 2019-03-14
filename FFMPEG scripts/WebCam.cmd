@@ -6,9 +6,8 @@ chcp 65001
 cls
 title FFplay WebCam
 REM actual program
-if not defined ffplay (
-	ffplay -f vfwcap -i 0
-) else (
+ffplay -f vfwcap -i 0
+if errorlevel 9009 (
 	echo.
 	echo Missing FFplay.exe software.
 	echo Please check your user Environment Variables in system settings.
@@ -20,4 +19,4 @@ if not defined ffplay (
 	pause
 	start http://ffmpeg.zeranoe.com/builds/
 )
-goto eof
+pause
