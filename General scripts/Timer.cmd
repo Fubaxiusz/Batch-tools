@@ -1,17 +1,24 @@
 REM This script measures time
 chcp 65001
 echo off
+title Script to measure time
 cls
 :start
-echo Press any key to START measuring time.
+echo ┌──────────────────────────────────────┐
+echo │Press any key to START measuring time.│
+echo └──────────────────────────────────────┘
 pause
 call :tstart
+title Measuring time...
 echo.
-echo Now press any key to STOP and display result.
+echo ┌─────────────────────────────────────────────┐
+echo │Now press any key to STOP and display result.│
+echo └─────────────────────────────────────────────┘
 pause
 call :tstop
+title Script to measure time
 echo.
-echo OK here are results:
+echo ───────────────────────────────────────────────
 call :timer
 goto start
 REM timer
@@ -31,11 +38,19 @@ if %sec:~0,1% == - ( set/a min -= 1 && set/a sec += 60 )
 if %min:~0,1% == - ( set/a hour -= 1 && set/a min += 60 )
 if %hour:~0,1% == - ( set/a hour += 24 )
 echo Rendering timer:
-echo  ╔══════════════════════╦═══════════╗  Total time:
-echo  ║Time of initialization║%starttime%║   hours .............. %hour%
-echo  ╟──────────────────────╫───────────╢   minutes ............ %min%
-echo  ║Time of execution     ║%endtime%║   seconds ............ %sec% %cents%/100
-echo  ╚══════════════════════╩═══════════╝
+echo  ╔═══════════════════════╦═══════════╗  Total time:
+echo  ║Time of initialization ║%starttime%║   hours .............. %hour%
+echo  ╟───────────────────────╫───────────╢   minutes ............ %min%
+echo  ║   Time of execution   ║%endtime%║   seconds ............ %sec% %cents%/100
+echo  ╚═══════════════════════╩═══════════╝
+REM Saving to log file
+echo %date%>> timelog.txt
+echo  ╔═══════════════════════╦═══════════╗  Total time:>> timelog.txt
+echo  ║Time of initialization ║%starttime%║   hours .............. %hour%>> timelog.txt
+echo  ╟───────────────────────╫───────────╢   minutes ............ %min%>> timelog.txt
+echo  ║   Time of execution   ║%endtime%║   seconds ............ %sec% %cents%/100>> timelog.txt
+echo  ╚═══════════════════════╩═══════════╝>> timelog.txt
+echo.>> timelog.txt
 goto eof
-REM (cc) 2015 Jacob Maximilian Fober
+REM (c) 2015 Jacob Maximilian Fober
 :eof
