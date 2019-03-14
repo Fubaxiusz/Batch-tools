@@ -71,7 +71,7 @@ set choice=%errorlevel%
 title FFplay Radio  #%choice%
 set loopmark=true
 call :%choice%
-echo.
+call :instruction
 ffplay -hide_banner -loglevel repeat+info -showmode waves -i %radio%
 if errorlevel 9009 (
 	cls
@@ -100,3 +100,14 @@ cls
 title FFplay Radio   last radio was #%choice%
 echo Your last choice was #%choice%...
 goto menu
+:instruction
+echo.
+echo  Key bindings:
+echo  ┌────────┬────────────────────┐
+echo  │"Q",ESC │ Quit               │
+echo  │"F"     │ Toggle full-screen │
+echo  │"P",SPC │ Pause              │
+echo  │"0","9" │ Volume (+-)        │
+echo  │"M"     │ Mute toggle        │
+echo  └────────┴────────────────────┘
+goto :eof
