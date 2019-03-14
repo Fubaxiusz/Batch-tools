@@ -49,11 +49,11 @@ echo #9 Electronic Psychedelic Goa Trance
 set radio=http://hestia2.cdnstream.com/1458_128
 %nextStation%
 :10
-echo #A Classical Music
+echo #10 Classical Music
 set radio=http://icecast6.play.cz/croddur-256.mp3
 %nextStation%
 :11
-echo #B Epic Cinematic
+echo #11 Epic Cinematic
 set radio=http://streaming.radionomy.com/Unleashingepicsoundtracks
 %nextStation%
 REM end of radio stations
@@ -67,7 +67,22 @@ set loopmark=true
 call :%choice%
 echo.
 ffplay -hide_banner -loglevel repeat+info -showmode waves -i %radio%
-if errorlevel 1 (
+if errorlevel 9009 (
+	cls
+	title=Error - FFplay Radio
+	ffplay
+	echo.
+	echo Missing FFplay.exe software.
+	echo Please check your user Environment Variables in system settings.
+	echo.
+	echo You can download FFplay packages at:
+	echo https://ffmpeg.org
+	echo.
+	echo ...press any key to visit download website
+	pause
+	start http://ffmpeg.zeranoe.com/builds/
+	title FFplay Radio
+) else if errorlevel 1 (
 	title Error - FFplay Radio
 	echo.
 	echo ERROR!
