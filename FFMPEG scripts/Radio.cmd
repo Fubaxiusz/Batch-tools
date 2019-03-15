@@ -51,22 +51,22 @@ echo #9 Electronic Psychedelic Goa Trance
 set radio=http://hestia2.cdnstream.com/1458_128
 %nextStation%
 :10
-echo #10(A) Electronic Psytrance Zenonseque
+echo #10(Q) Electronic Psytrance Zenonseque
 set radio=http://hestia2.cdnstream.com/1450_128
 %nextStation%
 :11
-echo #11(B) Classical Music
+echo #11(W) Classical Music
 set radio=http://icecast6.play.cz/croddur-256.mp3
 %nextStation%
 :12
-echo #12(C) Epic Cinematic
+echo #12(E) Epic Cinematic
 set radio=http://streaming.radionomy.com/Unleashingepicsoundtracks
 %nextStation%
 REM end of radio stations
 set radio=
 echo.
 echo To stop listening, press "q" or Esc
-choice /c 123456789ABC /m "Select your radio station..."
+choice /c 123456789QWE /m "Select your radio station..."
 set choice=%errorlevel%
 title FFplay Radio  #%choice%
 set loopmark=true
