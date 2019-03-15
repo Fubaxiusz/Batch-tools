@@ -11,9 +11,9 @@ pause
 call :tstart
 title Measuring time...
 REM Saving start to log file
-echo %date%>> timelog.txt
-echo  ╔═══════════════════════╦═══════════╗>> timelog.txt
-echo  ║Time of initialization ║%starttime%║  Total time:>> timelog.txt
+echo %date%>> timelog.log
+echo  ╔═══════════════════════╦═══════════╗>> timelog.log
+echo  ║Time of initialization ║%starttime%║  Total time:>> timelog.log
 REM End of log file print
 echo.
 echo ┌─────────────────────────────────────────────┐
@@ -49,10 +49,10 @@ echo  ╟───────────────────────�
 echo  ║   Time of execution   ║%endtime%║   seconds ............ %sec% %cents%/100
 echo  ╚═══════════════════════╩═══════════╝
 REM Saving to log file
-echo  ╟───────────────────────╫───────────╢   hours .............. %hour% >> timelog.txt
-echo  ║   Time of execution   ║%endtime%║   minutes ............ %min% >> timelog.txt
-echo  ╚═══════════════════════╩═══════════╝   seconds ............ %sec% %cents%/100>> timelog.txt
-echo.>> timelog.txt
+echo  ╟───────────────────────╫───────────╢   hours .............. %hour% >> timelog.log
+echo  ║   Time of execution   ║%endtime%║   minutes ............ %min% >> timelog.log
+echo  ╚═══════════════════════╩═══════════╝   seconds ............ %sec% %cents%/100>> timelog.log
+echo.>> timelog.log
 goto eof
 REM (c) 2015 Jacob Maximilian Fober
 :eof
