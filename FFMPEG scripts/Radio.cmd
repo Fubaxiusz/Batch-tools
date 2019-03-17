@@ -9,9 +9,9 @@ title FFplay Radio
 color 0a
 set nextStation=if defined loopmark goto :eof
 :menu
-echo     ┌┐╔════════════════════════════════════╗┌┐
-echo  ─══╡│║ Available radio station to listen: ║│╞══─
-echo     └┘╚════════════════════════════════════╝└┘
+echo       ┐╔════════════════════════════════════╗┌
+echo   ─══╡│║ Available radio station to listen: ║│╞══─
+echo       ┘╚════════════════════════════════════╝└
 set loopmark=
 REM Here are radio stations
 :1
