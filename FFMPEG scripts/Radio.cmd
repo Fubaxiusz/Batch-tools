@@ -27,12 +27,12 @@ echo #3 Bit O Blues
 set radio=http://69.4.234.186:8500/
 %nextStation%
 :4
-echo #4 InfoWars WarRoom podcast
-set radio=http://192.240.107.134:80/warroom
+echo #4 War Room with Owen Shroyer
+set radio=http://50.7.69.18:80/warroom
 %nextStation%
 :5
-echo #5 InfoWars AlexJones show
-set radio=http://192.240.107.134:80/alexjonesshow
+echo #5 Alex Jones - Infowars.com
+set radio=http://50.7.69.18:80/alexjonesshow
 %nextStation%
 :6
 echo #6 Blues Classics
