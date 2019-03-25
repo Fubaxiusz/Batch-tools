@@ -4,14 +4,15 @@ echo off
 title Script to measure time
 cls
 :start
-echo ┌──────────────────────────────────────┐
-echo │Press any key to START measuring time.│
-echo └──────────────────────────────────────┘
-pause
+echo ┌────────────────────────────────────┐
+echo │Press enter to START measuring time.│
+echo └────────────────────────────────────┘
+set /p sessionTitle="Set timer session title or press enter >"
+if not defined sessionTitle (set sessionTitle=unnamed session)
 call :tstart
-title Measuring time...
+title Measuring time... %sessionTitle%
 REM Saving start to log file
-echo %date%>> timelog.log
+echo %date% - %sessionTitle%>> timelog.log
 echo  ╔═══════════════════════╦═══════════╗>> timelog.log
 echo  ║Time of initialization ║%starttime%║  Total time:>> timelog.log
 REM End of log file print
@@ -21,7 +22,7 @@ echo │Now press any key to STOP and display result.│
 echo └─────────────────────────────────────────────┘
 pause
 call :tstop
-title Script to measure time
+title Script to measure time... %sessionTitle%
 echo.
 echo ───────────────────────────────────────────────
 call :timer
