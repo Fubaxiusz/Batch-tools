@@ -276,11 +276,11 @@ set starttime=%time%
 if defined audiofile (
 REM Incorrect color in video player? Try version in the comment
 REM	ffmpeg -r %fps%%startnumber% -i %vidfile% -i %audiofile% -map 0:v -map 1:a%res%-c:a aac -profile:a aac_low -b:a %audiobitrate% -c:v libx264%bps% -bf 2 -g %gop% -preset %compression%%tune% -profile:v high -pix_fmt yuvj420p -vf colormatrix=bt601:bt709 -movflags faststart -metadata title="%title%"%copyright% "%output%\%title% (4YouTube).mp4"
-	ffmpeg -r %fps%%startnumber% -i %vidfile% -i %audiofile% -map 0:v -map 1:a%res%-c:a aac -profile:a aac_low -b:a %audiobitrate% -c:v libx264%bps% -bf 2 -g %gop% -preset %compression%%tune% -profile:v high -pix_fmt yuvj420p -movflags faststart -metadata title="%title%"%copyright% "%title% (4YouTube).mp4"
+	ffmpeg -hide_banner -r %fps%%startnumber% -i %vidfile% -i %audiofile% -map 0:v -map 1:a%res%-c:a aac -profile:a aac_low -b:a %audiobitrate% -c:v libx264%bps% -bf 2 -g %gop% -preset %compression%%tune% -profile:v high -pix_fmt yuvj420p -movflags faststart -metadata title="%title%"%copyright% "%title% (4YouTube).mp4"
 ) else (
 REM Incorrect color in video player? Try version in the comment
 REM	ffmpeg -r %fps%%startnumber% -i %vidfile% -an%res%-c:v libx264%bps% -bf 2 -g %gop% -preset %compression%%tune% -profile:v high -pix_fmt yuvj420p -vf colormatrix=bt601:bt709 -movflags faststart -metadata title="%title%"%copyright% "%output%\%title% (4YouTube-NoAudio).mp4"
-	ffmpeg -r %fps%%startnumber% -i %vidfile% -map 0:v -an%res%-c:v libx264%bps% -bf 2 -g %gop% -preset %compression%%tune% -profile:v high -pix_fmt yuvj420p -movflags faststart -metadata title="%title%"%copyright% "%title% (4YouTube-NoAudio).mp4"
+	ffmpeg -hide_banner -r %fps%%startnumber% -i %vidfile% -map 0:v -an%res%-c:v libx264%bps% -bf 2 -g %gop% -preset %compression%%tune% -profile:v high -pix_fmt yuvj420p -movflags faststart -metadata title="%title%"%copyright% "%title% (4YouTube-NoAudio).mp4"
 )
 if %errorlevel%==9009 (
 	title Error - MP4 film 4 YouTube

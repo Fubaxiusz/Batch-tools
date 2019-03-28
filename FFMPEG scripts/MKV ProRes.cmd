@@ -66,5 +66,5 @@ set ProResType=4444xq
 :6
 
 for %%V in (%*) do (
-	ffmpeg -i "%%~nxV" -c:a copy -c:v prores_ks -profile:v %ProRes% -quant_mat 0 "ProRes_%ProResType%-%%~nV.mkv"
+	ffmpeg  -hide_banner -i "%%~nxV" -c:a copy -c:v prores_ks -profile:v %ProRes% -quant_mat 0 "ProRes_%ProResType%-%%~nV.mkv"
 )

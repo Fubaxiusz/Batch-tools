@@ -5,10 +5,10 @@ if not defined filelist (
 	set filelist=
 	echo off
 	cls
-	title Convert and trim to MP4 - Error
+	title Convert and trim to MKV - Error
 	echo File not found...
 	echo Please Drag ^& Drop video file onto this .cmd script
-	echo ───────────────────────────────────────────────────
+	echo ...................................................
 	pause
 	goto eof
 )
@@ -16,7 +16,7 @@ set filelist=
 
 echo off
 cls
-title Convert and trim to MP4
+title Convert and trim to MKV
 
 SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 for %%V in (%*) do (
@@ -32,5 +32,5 @@ for %%V in (%*) do (
 		set /p lenght="Enter final clip LENGTH in XX:XX.XXX >"
 		set lenght= -t !lenght! 
 	)
-	ffmpeg -hide_banner -i "%%~nxV"!start!!lenght!-c:a copy -c:v copy -movflags faststart "4YouTube-%%~nV.mp4"
+	ffmpeg -hide_banner -fflags +genpts -i "%%~dV%%~pV%%~nxV"!start!!lenght!-map 0 -c copy "%%~dV%%~pVtrimmed %%~nV.mkv"
 )

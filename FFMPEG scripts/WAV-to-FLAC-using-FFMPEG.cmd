@@ -37,7 +37,7 @@ for %%t in (*.wav) do (
 	echo CURRENT FILE IS "%%t"
 	echo.
 REM Starting FFMPEG module
-	ffmpeg -i "%%t" "%%~nt.flac"
+	ffmpeg -hide_banner -i "%%t" "%%~nt.flac"
 REM Checking error status of FFMPEG
 	if errorlevel 9009 (
 		echo.

@@ -142,9 +142,9 @@ title Video to Image Sequence - rendering...
 REM Starting render and setting time.
 call :tstart
 if %expaudio%==1 (
-   ffmpeg%startAt%-i %input%%toPosition% "%filename%.wav"
+   ffmpeg -hide_banner%startAt%-i %input%%toPosition% "%filename%.wav"
 )
-ffmpeg%startAt%-i %input%%fps%-pix_fmt %bitdepth%%toPosition%%compression%"%filename%_%%05d%filetype%"
+ffmpeg -hide_banner%startAt%-i %input%%fps%-pix_fmt %bitdepth%%toPosition%%compression%"%filename%_%%05d%filetype%"
 call :tstop
 call :timer
 REM Bell rings 3 times when rendering is done

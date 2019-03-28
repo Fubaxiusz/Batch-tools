@@ -39,7 +39,7 @@ if errorlevel 2 (
 REM Assigning file name
 for %%V in (%Video%) do set Output=%%~dV%%~pV%%~nV
 REM Beginning merging
-ffmpeg -i %Video% -i %Audio% -c copy -map 0:v -map 1:a "%Output%.mkv"
+ffmpeg -hide_banner -i %Video% -i %Audio% -c copy -map 0:v -map 1:a "%Output%.mkv"
 if errorlevel 9009 (
 	echo.
 	ffmpeg

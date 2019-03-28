@@ -6,7 +6,7 @@ chcp 65001
 cls
 title FFplay WebCam
 REM actual program
-ffplay -f vfwcap -i 0
+ffplay -hide_banner -f vfwcap -i 0
 if errorlevel 9009 (
 	echo.
 	echo Missing FFplay.exe software.
