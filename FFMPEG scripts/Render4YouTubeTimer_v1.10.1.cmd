@@ -7,7 +7,7 @@ cls
 title MP4 film creator - 4 YouTube
 echo  ▄ ▄                                ▄ ▄
 echo  █▀█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀█  by
-echo  █▀█  ▄ ▄          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄   █▀█  J.M.F.                     ver 1.10.1
+echo  █▀█  ▄ ▄          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄   █▀█  J.M.F.                     ver 1.10.2
 echo  █▀█  █▄█        ░█▄ ▄████ ███████  █▀█ ═══════════════════════════════════════
 echo  █▀█   █░ █▀█ █░█░██░█░█░█░▄░█░■░█  █▀█  Hello, this software will merge image
 echo  █▀█   █░ █▄█ █▄█░██░█░▀░█░▀░█░▀▀█  █▀█  sequence with audio file to MP4 film,
@@ -18,7 +18,7 @@ echo  █▀█        ─══ 4YouTube ══─        █▀█  Please ent
 echo  █▀█                                █▀█  (Accepted formats: PNG, TIFF, JPG and
 echo  █▀█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀█  audio M4A, WAV, FLAC, MP3)
 echo.
-echo  #TIP  To paste use right mouse button.       (cc) 2015 Jacob Maximilian Fober
+echo  #TIP  To paste use right mouse button.        (c) 2015 Jacob Maximilian Fober
 echo ═══════════════════════════════════════════════════════════════════════════════
 :importvid
 echo Type of source file to import:
