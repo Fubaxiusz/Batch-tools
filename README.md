@@ -5,6 +5,8 @@ A collection of some .bat/.cmd scripts written for Windows and FFMPEG.
 As Git-hub changes end line symbol to Linux on raw files.
 
 Some scripts examples:
-=====================
+---------------------
 ![](https://i.imgur.com/qpZF02I.jpg)
-[Merging Audio with Video YouTube](/FFMPEG scripts/Merging Audio with Video YouTube v1.2.cmd)
+![](https://i.imgur.com/VT2bmFo.jpg)
+![](https://i.imgur.com/NZRNGg9.jpg)
+![](https://i.imgur.com/HfguGlZ.jpg)
