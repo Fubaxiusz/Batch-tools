@@ -6,12 +6,14 @@ cls
 REM Default audio device for FFplay
 set SDL_AUDIODRIVER=directsound
 title FFplay Radio
-color 0a
+color 0c
+call :logo
 set nextStation=if defined loopmark goto :eof
 :menu
 echo       ┐╔════════════════════════════════════╗┌
 echo   ─══╡│║ Available radio station to listen: ║│╞══─
 echo       ┘╚════════════════════════════════════╝└
+echo.
 set loopmark=
 REM Here are radio stations
 :1
@@ -35,7 +37,7 @@ echo #5 Alex Jones - Infowars.com
 set radio=http://50.7.69.18:80/alexjonesshow
 %nextStation%
 :6
-echo #6 Blues Classics
+echo #6 Missing
 set radio=http://208.77.21.33:11610/
 %nextStation%
 :7
@@ -64,6 +66,7 @@ set radio=http://streaming.radionomy.com/Unleashingepicsoundtracks
 %nextStation%
 REM end of radio stations
 set radio=
+echo.
 echo.
 echo To stop listening, press "q" or Esc
 choice /c 123456789QWE /m "Select your radio station..."
@@ -110,4 +113,25 @@ echo  │"P",SPC │ Pause              │
 echo  │"0","9" │ Volume (+-)        │
 echo  │"M"     │ Mute toggle        │
 echo  └────────┴────────────────────┘
+goto :eof
+:logo
+echo.
+echo  ▀███████████     ███████       ███████ ▀██████████████████▄
+echo  ░██▓▓▓▓▓▓▓▓██   ██▓▓▓▓▓██     ██▓▓▓▓▓██ ▒██▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▄
+echo  ▒░██▓▒▒▒▒▒▒▓██ ▄██▓▒▒▒▒▓██   ██▓▒▒▒░▒▓██ ░██▓▓▒▒▒▒▒▒▓███████▄
+echo  ▓▒ ██████▓▒▒▓██░ ██▓▓▓░▒▓██ ██▓▒▓▓▒▒░▒▓██ ░██▓▓░░░░▒▒▓██▄░  ▒
+echo  ▀▓░ ▀▀▀▀██▓░▒▓██░ ██▓█▓░▒▓███▓▒▓▓█▓▓▒░▒▓██ ░██▓▓▒░▒▓▓▓▓██▄ ░▓
+echo   ▀▓▒░  ░▓██▓░▒▓██░ ▀███▓▓▒▓▓▓▒▓▓███▓▓▒░▒▓██ ░██▓▓░▒▓██████▄▒▓
+echo    ▀▓░▄░▒▓░██▓░▒▓██░░▀░██▓▓▒░▒▓▓██░██▓▓▒░▒▓██ ░██▓▓░▒▓██▄ ▒░▀▀
+echo     ▀███▒▒▒░██▓░▒▓██░░▒ ██▓▓▒▓▓██ ░ ██▓▓▒▓▓██▀░░██▓▓░▓▓██ ▓▒
+echo     ██▓████████▓░▒▓██░▒ ░██▓▓▓██ ░▓░ ██▓▓▓██ ▒░  ██▓▓▓██▀ ▓█
+echo    ██▓▓▓▓▓▓▓▓▓▓▓░░▒▓██▓░ ░██▓██░ ▒▓▒ ░██▓██ ░▓▒   ██▓██ ░▀▀
+echo   ███▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▓██▒░ ░███░ ░▓▀▓░  ███  ░▓░▓▒  ███  ▒
+echo   ▒▀████████████████████▒   █   ▓▀ ▀░   █   ▒▀ ▀▓▒  █  ░▒
+echo   ▓░▒                  ▒▀▓  ▒  ▓▀   ▀▓  ▒  ▓▀   ▀▓░ ▒ ░▓▀
+echo   █░▓▓▒▒░░        ░░░▒▒▓ ▀▓░▓░▓▀     ▀▓░▓░▓▀     ▀▓▒▓░▓▀ by JMF...
+echo    █▓▓▓▓▒▒▒░░  ░░░▒▒▓▓▓▓  ▀▓▓▓▀       ▀▓▓▓▀       ▀▓▓▓▀
+echo     ▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀   ▀█▀         ▀█▀         ▀█▀
+timeout /t 1
+echo.
 goto :eof
