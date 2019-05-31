@@ -6,13 +6,14 @@ cls
 REM Default audio device for FFplay
 set SDL_AUDIODRIVER=directsound
 title FFplay Radio
-color 0c
+color 0b
 call :logo
 set nextStation=if defined loopmark goto :eof
 :menu
 echo       ┐╔════════════════════════════════════╗┌
 echo   ─══╡│║ Available radio station to listen: ║│╞══─
 echo       ┘╚════════════════════════════════════╝└
+echo.
 echo.
 set loopmark=
 REM Here are radio stations
