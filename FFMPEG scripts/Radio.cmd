@@ -38,24 +38,24 @@ echo #5 Alex Jones - Infowars.com
 set radio=http://50.7.69.18:80/alexjonesshow
 %nextStation%
 :6
-echo #6 Missing
-set radio=http://208.77.21.33:11610/
+echo #6 Deep Jams Radio
+set radio=http://s8.voscast.com:9748/
 %nextStation%
 :7
-echo #7 Deep Jams Radio
-set radio=http://74.50.122.103:9748/
-%nextStation%
-:8
-echo #8 Electronic Trance Psytrance Progressive
+echo #7 Electronic Trance Psytrance Progressive
 set radio=http://hestia2.cdnstream.com/1453_128
 %nextStation%
-:9
-echo #9 Electronic Psychedelic Goa Trance
+:8
+echo #8 Electronic Psychedelic Goa Trance
 set radio=http://hestia2.cdnstream.com/1458_128
 %nextStation%
-:10
-echo #10(Q) Electronic Psytrance Zenonseque
+:9
+echo #9 Electronic Psytrance Zenonseque
 set radio=http://hestia2.cdnstream.com/1450_128
+%nextStation%
+:10
+echo #10(Q) JS Bach
+set radio=http://streams.calmradio.com/api/299/128/stream
 %nextStation%
 :11
 echo #11(W) Classical Music
