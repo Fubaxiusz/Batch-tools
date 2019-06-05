@@ -30,16 +30,16 @@ echo #3 Bit O Blues
 set radio=http://69.4.234.186:8500/
 %nextStation%
 :4
-echo #4 War Room with Owen Shroyer
-set radio=http://50.7.69.18:80/warroom
+echo #4 Deep Jams Radio
+set radio=http://s8.voscast.com:9748/
 %nextStation%
 :5
-echo #5 Alex Jones - Infowars.com
-set radio=http://50.7.69.18:80/alexjonesshow
+echo #5 War Room with Owen Shroyer
+set radio=http://50.7.69.18:80/warroom
 %nextStation%
 :6
-echo #6 Deep Jams Radio
-set radio=http://s8.voscast.com:9748/
+echo #6 Alex Jones - Infowars.com
+set radio=http://50.7.69.18:80/alexjonesshow
 %nextStation%
 :7
 echo #7 Electronic Trance Psytrance Progressive
