@@ -32,5 +32,5 @@ for %%V in (%*) do (
 		set /p lenght="Enter final clip LENGTH in XX:XX.XXX >"
 		set lenght= -t !lenght! 
 	)
-	ffmpeg -hide_banner -i "%%~nxV"!start!!lenght!-c:a copy -c:v copy -movflags faststart "4YouTube-%%~nV.mp4"
+	ffmpeg -hide_banner -fflags +genpts -i "%%~dV%%~pV%%~nxV"!start!!lenght!-c:a copy -c:v copy -movflags faststart "%%~dV%%~pV4YouTube-%%~nV.mp4"
 )
