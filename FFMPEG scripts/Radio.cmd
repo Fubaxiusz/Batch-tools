@@ -62,15 +62,19 @@ echo #11(W) Classical Music
 set radio=http://icecast6.play.cz/croddur-256.mp3
 %nextStation%
 :12
-echo #12(E) Epic Cinematic
-set radio=http://streaming.radionomy.com/Unleashingepicsoundtracks
+echo #12(E) CINEMIX
+set radio=http://158.69.38.195:20082
+%nextStation%
+:13
+echo #13(R) Streaming Soundtracks
+set radio=http://hi5.streamingsoundtracks.com
 %nextStation%
 REM end of radio stations
 set radio=
 echo.
 echo.
 echo To stop listening, press "q" or Esc
-choice /c 123456789QWE /m "Select your radio station..."
+choice /c 123456789QWER /m "Select your radio station..."
 set choice=%errorlevel%
 title FFplay Radio  #%choice%
 set loopmark=true
