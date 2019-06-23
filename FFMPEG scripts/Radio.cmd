@@ -14,7 +14,6 @@ echo       ┐╔═════════════════════
 echo   ─══╡│║ Available radio station to listen: ║│╞══─
 echo       ┘╚════════════════════════════════════╝└
 echo.
-echo.
 set loopmark=
 REM Here are radio stations
 :1
@@ -69,12 +68,15 @@ set radio=http://158.69.38.195:20082
 echo #13(R) Streaming Soundtracks
 set radio=http://hi5.streamingsoundtracks.com
 %nextStation%
+:14
+echo #14(T) Jazz24
+set radio=http://live.wostreaming.net/direct/ppm-jazz24mp3-ibc1
+%nextStation%
 REM end of radio stations
 set radio=
 echo.
-echo.
 echo To stop listening, press "q" or Esc
-choice /c 123456789QWER /m "Select your radio station..."
+choice /c 123456789QWERT /m "Select your radio station..."
 set choice=%errorlevel%
 title FFplay Radio  #%choice%
 set loopmark=true
