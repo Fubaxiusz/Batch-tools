@@ -10,7 +10,7 @@ echo "%cd%"?
 choice
 if %errorlevel%==1 (
 	echo [.ShellClassInfo]>desktop.ini
-	echo InfoTip=%info%>>desktop.ini
+	if defined %info% echo InfoTip=%info%>>desktop.ini
 	echo IconResource=%icon%,^0>>desktop.ini
 	attrib +s +h +r desktop.ini
 	attrib +s +h +r %icon%
