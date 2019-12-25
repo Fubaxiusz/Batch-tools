@@ -6,7 +6,8 @@ cls
 REM Default audio device for FFplay
 set SDL_AUDIODRIVER=directsound
 title FFplay Radio
-color 0b
+color f0
+rem mode con: cols=67 lines=39
 call :logo
 set nextStation=if defined loopmark goto :eof
 :menu
@@ -29,54 +30,50 @@ echo #3 Bit O Blues
 set radio=http://69.4.234.186:8500/
 %nextStation%
 :4
-echo #4 Deep Jams Radio
-set radio=http://s8.voscast.com:9748/
-%nextStation%
-:5
-echo #5 War Room with Owen Shroyer
+echo #4 War Room with Owen Shroyer
 set radio=http://50.7.69.18:80/warroom
 %nextStation%
-:6
-echo #6 Alex Jones - Infowars.com
+:5
+echo #5 Alex Jones - Infowars.com
 set radio=http://50.7.69.18:80/alexjonesshow
 %nextStation%
-:7
-echo #7 Electronic Trance Psytrance Progressive
+:6
+echo #6 Electronic Trance Psytrance Progressive
 set radio=http://hestia2.cdnstream.com/1453_128
 %nextStation%
-:8
-echo #8 Electronic Psychedelic Goa Trance
+:7
+echo #7 Electronic Psychedelic Goa Trance
 set radio=http://hestia2.cdnstream.com/1458_128
 %nextStation%
-:9
-echo #9 Electronic Psytrance Zenonseque
+:8
+echo #8 Electronic Psytrance Zenonseque
 set radio=http://hestia2.cdnstream.com/1450_128
 %nextStation%
-:10
-echo #10(Q) JS Bach
+:9
+echo #9 JS Bach
 set radio=http://streams.calmradio.com/api/299/128/stream
 %nextStation%
-:11
-echo #11(W) Classical Music
+:10
+echo #10(Q) Classical Music
 set radio=http://icecast6.play.cz/croddur-256.mp3
 %nextStation%
-:12
-echo #12(E) CINEMIX
+:11
+echo #11(W) CINEMIX
 set radio=http://158.69.38.195:20082
 %nextStation%
-:13
-echo #13(R) Streaming Soundtracks
+:12
+echo #12(E) Streaming Soundtracks
 set radio=http://hi5.streamingsoundtracks.com
 %nextStation%
-:14
-echo #14(T) Jazz24
+:13
+echo #13(R) Jazz24
 set radio=http://live.wostreaming.net/direct/ppm-jazz24mp3-ibc1
 %nextStation%
 REM end of radio stations
 set radio=
 echo.
 echo To stop listening, press "q" or Esc
-choice /c 123456789QWERT /m "Select your radio station..."
+choice /c 123456789QWER /m "Select your radio station..."
 set choice=%errorlevel%
 title FFplay Radio  #%choice%
 set loopmark=true
