@@ -6,7 +6,7 @@ cls
 REM Default audio device for FFplay
 set SDL_AUDIODRIVER=directsound
 title FFplay Radio
-color f0
+REM color f0
 rem mode con: cols=67 lines=39
 call :logo
 set nextStation=if defined loopmark goto :eof

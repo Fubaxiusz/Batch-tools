@@ -1,13 +1,13 @@
 REM Add icon to folder
 echo off
 cls
-set /p info="Type info tip>"
+set /p info="Type info tip (leave blank if none)>"
 echo.
-set /p icon="Type icon file name>"
+set /p icon="Type icon file name [TAB]>"
 echo.
 echo Do you want to add icon to this folder:
 echo "%cd%"?
-choice
+choice /c YN
 if %errorlevel%==1 (
 	echo [.ShellClassInfo]>desktop.ini
 	if defined %info% echo InfoTip=%info%>>desktop.ini
