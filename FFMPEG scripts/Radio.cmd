@@ -69,11 +69,23 @@ set radio=http://hi5.streamingsoundtracks.com
 echo #13(R) Jazz24
 set radio=http://live.wostreaming.net/direct/ppm-jazz24mp3-ibc1
 %nextStation%
+:14
+echo #14(T) Megaton Cafe Radio
+set radio=http://us2.internet-radio.com:8443/stream
+%nextStation%
+:15
+echo #15(Y) Classic Oldies
+set radio=http://91.121.121.25:8076/stream
+%nextStation%
+:16
+echo #16(U) All Oldies Radio
+set radio=https://ais-sa2.cdnstream1.com/1345_320
+%nextStation%
 REM end of radio stations
 set radio=
 echo.
 echo To stop listening, press "q" or Esc
-choice /c 123456789QWER /m "Select your radio station..."
+choice /c 123456789QWERTYU /m "Select your radio station..."
 set choice=%errorlevel%
 title FFplay Radio  #%choice%
 set loopmark=true
