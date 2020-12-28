@@ -46,6 +46,8 @@ if errorlevel 9009 (
 	start https://ffmpeg.org/download.html#build-windows
 	goto :eof
 )
+echo.
+pause
 cls
 :instruction
 echo  Key bindings:
