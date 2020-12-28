@@ -14,7 +14,7 @@ ffplay -hide_banner -filter_threads %cpuT% -an -sn ^
 -vf split=3[parade][luma][vector];^
 
 [vector]format=yuv420p,^
-vectorscope=mode=color3:colorspace=709:graticule=invert:flags=white+name,^
+vectorscope=mode=color4:colorspace=709:graticule=invert:flags=white+name,^
 drawbox=w=4:h=4:t=1:x=104-2:y=98-2:c=invert,^
 drawbox=w=4:h=4:t=1:x=110-2:y=106-2:c=invert,^
 drawbox=w=4:h=4:t=1:x=116-2:y=113-2:c=invert,^
