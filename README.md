@@ -6,6 +6,7 @@ As Git-hub changes end line symbol to Linux on raw files.
 
 Some scripts examples:
 ---------------------
+![Color Grading Scopes (OBS).cmd](https://i.imgur.com/E9OM8yo.png)
 ![](https://i.imgur.com/qpZF02I.jpg)
 ![](https://i.imgur.com/VT2bmFo.jpg)
 ![](https://i.imgur.com/NZRNGg9.jpg)
