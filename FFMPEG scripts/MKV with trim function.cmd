@@ -34,3 +34,5 @@ for %%V in (%*) do (
 	)
 	ffmpeg -hide_banner -fflags +genpts -i "%%~dV%%~pV%%~nxV"!start!!lenght!-map 0 -c copy "%%~dV%%~pVtrimmed %%~nV.mkv"
 )
+pause
+
