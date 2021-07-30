@@ -12,6 +12,8 @@ title 7-zip Icon Changer - Please wait...
 echo Making registry changes. Please wait...
 echo.
 FOR %%e IN (*.ico) DO (
+	echo HKCR\7-Zip.%%~ne "%%~ne Archive"
+	REG ADD HKCR\7-Zip.%%~ne /ve /d "%%~ne Archive" /f
 	echo HKCR\7-Zip.%%~ne\DefaultIcon "%cd%\%%e"
 	REG ADD HKCR\7-Zip.%%~ne\DefaultIcon /ve /d "%cd%\%%e" /f
 	echo.
