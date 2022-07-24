@@ -1,24 +1,37 @@
 REM This script uses FFPLAY to display vectorscope
-REM with waveform parade and luma of a window capture
-REM Copyright (c) 2018 Jacob Maximilian Fober
+REM with waveform parade and luma of a main monitor
+REM or a custom desktop region.
+REM Copyright (c) 2017 Jacob Maximilian Fober
 REM This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 REM (CC BY-SA 4.0) https://creativecommons.org/licenses/by-sa/4.0/
 echo off
 cls
-title=JMF Grading Scopes (window capture)
+title=JMF Grading Scopes (desktop capture)
 set /a cpuT=%NUMBER_OF_PROCESSORS%*3/2
+REM Getting main screen region (for multi-monitor setup)
+for /f %%r in (
+	'wmic path Win32_VideoController get CurrentHorizontalResolution^, CurrentVerticalResolution /value ^| findstr /v /r "^$"'
+) do (
+	set %%r
+)
+set offset_x=0
+set offset_y=0
+set show_region=1
 call :logo
-echo  ╔══════════════════════════════╗
-echo  ║To reset captured window name,║
-echo  ║please close the scope window.║
-echo  ╚══════════════════════════════╝
+echo  ╔══════════════════════════════════╗
+echo  ║To manually set up capture region,║
+echo  ║ please close the scope window.   ║
+echo  ╚══════════════════════════════════╝
+echo.
 call :instruction
 :scope
-set /p name="Please enter window name to capture> "
 ffplay -hide_banner -threads %cpuT% -f gdigrab -framerate 11 ^
--i title=%name% -window_title^
- "JMF Grading Scopes - %name% - window capture" ^
--vf split=3[vector][wave][source],^
+-show_region %show_region% ^
+-video_size %CurrentHorizontalResolution%x%CurrentVerticalResolution% ^
+-offset_x %offset_x% -offset_y %offset_y% ^
+-i desktop -window_title^
+ "JMF Grading Scopes - desktop capture at %CurrentHorizontalResolution%x%CurrentVerticalResolution%" ^
+-vf split=2[vector][wave],^
 
 [vector]^
 format=yuv444p9,^
@@ -44,18 +57,11 @@ format=yuva444p,^
 waveform=filter=lowpass:scale=ire:graticule=green:flags=numbers+dots^
 [luma],^
 
-[parade][luma]hstack^
-
+[parade][luma]hstack,^
+format=yuva444p^
 [wave],^
 
-[source]^
-scale=496:112:force_original_aspect_ratio=decrease,^
-pad=w=512:h=128:x=-1:y=-1,^
-format=gbrp,^
-format=yuva444p^
-[source],^
-
-[vector][wave][source]vstack=inputs=3
+[vector][wave]vstack
 if errorlevel 9009 (
 	cls
 	title=JMF Grading Scopes - Error
@@ -73,6 +79,25 @@ if errorlevel 9009 (
 )
 cls
 call :instruction
+echo Select capture region in pixels (you can use simple equations):
+echo Note that the offset calculation is from the top left corner of
+echo the primary monitor on Windows.
+echo If you have a monitor positioned to the left or above
+echo your primary monitor, you will need to use
+echo a negative offset value to move the region to that monitor.
+echo.
+set /p CurrentHorizontalResolution="Capture size X> "
+set /p CurrentVerticalResolution="Capture size Y> "
+set /p offset_x="Capture offset X> "
+set /p offset_y="Capture offset Y> "
+choice /c YN /n /m "Show grabbed region on screen? (Yes, No)> "
+set show_region=%errorlevel%
+REM Calculate result for mathematical and logic equation
+set /a CurrentHorizontalResolution=%CurrentHorizontalResolution%
+set /a CurrentVerticalResolution=%CurrentVerticalResolution%
+set /a offset_x=%offset_x%
+set /a offset_y=%offset_y%
+set /a show_region=1-(%show_region%-1)
 goto :scope
 :logo
 echo Made by...
@@ -95,7 +120,6 @@ echo     ▀▀▀▀▀▀▀▀    ▀▀▀▀▀▀▀▀   ▀█▀       
 echo.
 goto :eof
 :instruction
-echo.
 echo  Key bindings:
 echo  ┌────────┬────────────────────┐
 echo  │"Q",ESC │ Quit              │
