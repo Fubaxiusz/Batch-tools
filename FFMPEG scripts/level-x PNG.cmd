@@ -1,13 +1,20 @@
 chcp 65001
 echo off
 cls
-set /p quality="What quality? (default 3)>"
-mkdir "%%~dF%%~pF\lvl%quality%_PNG"
+title PNG compression
+set /p quality="What compression quality? (default is 3)>"
 for %%F in (%*) do (
 	echo.
-	ffmpeg -hide_banner -i %%F -compression_level:v %quality% "%%~dF%%~pF\lvl%quality%_PNG\%%~nF.png"
+	title Compressing "%%~nxF"
+	mkdir "%%~dF%%~pF\lvl%quality%_PNG"
+	ffmpeg -hide_banner ^
+		-i %%F ^
+		-map_metadata -1 ^
+		-pred mixed ^
+		-compression_level:v %quality% ^
+		"%%~dF%%~pF\lvl%quality%_PNG\%%~nF.png"
 )
 echo.
-echo FINISHED
+echo Finished
 echo 
 pause
